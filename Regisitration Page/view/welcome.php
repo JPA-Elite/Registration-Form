@@ -36,6 +36,7 @@
         </div>
 
     </div>
+    <script src="../resources/js/function.js"></script>
 
 </body>
 
