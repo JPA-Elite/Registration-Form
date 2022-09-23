@@ -15,9 +15,13 @@
         <source src="../resources/video/halo.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-   
+    <div id="clock">
+        <p class="date">{{ date }}</p>
+        <p class="time">{{ time }}</p>
+
+    </div>
     <div class="intro_main">
-    <div class="v2"></div>
+        <div class="v2"></div>
         <div>
             <h1 class="title">Hello! Welcome!</h1>
             <?php
@@ -42,6 +46,34 @@
 
     </div>
     <script src="../resources/js/function.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script>
+        var clock = new Vue({
+            el: '#clock',
+            data: {
+                time: '',
+                date: ''
+            }
+        });
+
+        var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+        var timerID = setInterval(updateTime, 1000);
+        updateTime();
+
+        function updateTime() {
+            var cd = new Date();
+            clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+            clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+        };
+
+        function zeroPadding(num, digit) {
+            var zero = '';
+            for (var i = 0; i < digit; i++) {
+                zero += '0';
+            }
+            return (zero + num).slice(-digit);
+        }
+    </script>
 
 </body>
 
