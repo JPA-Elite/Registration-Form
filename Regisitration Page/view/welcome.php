@@ -10,9 +10,14 @@
     <title>Welcome</title>
 </head>
 
-<body>
-    <div class="mask v2"></div>
+<body id="welcome">
+    <video autoplay muted loop id="myVideo">
+        <source src="../resources/video/halo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+   
     <div class="intro_main">
+    <div class="v2"></div>
         <div>
             <h1 class="title">Hello! Welcome!</h1>
             <?php
