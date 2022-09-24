@@ -11,11 +11,7 @@
     <title>Registration Form</title>
 </head>
 
-<body style="height: 100%;">
-    <audio id="myAudio">
-        <source src="../resources/sound/theme.mp3" type="audio/mpeg">
-    </audio>
-
+<body style="height: 100%;" onload="">
     <audio id="beep">
         <source src="../resources/sound/beep.mp3" type="audio/mpeg">
     </audio>
@@ -85,9 +81,10 @@
 <script src="../resources/js/function.js"></script>
 
 <script>
+   
     var cursor = document.querySelector(".cursor");
     var cursorBorder = document.querySelector(".cursor-border");
-    var getXY = function(event, element) {
+    var getXY = function (event, element) {
         var x = event.clientX;
         var y = event.clientY;
         var rect = element.getBoundingClientRect();
@@ -95,7 +92,7 @@
         y -= rect.height / 2;
         return [x, y];
     };
-    document.addEventListener("mouseenter", function(e) {
+    document.addEventListener("mouseenter", function (e) {
         cursor.animate([{
             opacity: 0
         }, {
@@ -105,17 +102,17 @@
             fill: "forwards"
         });
         cursorBorder.animate([{
-                opacity: 0
-            },
-            {
-                opacity: 0.8
-            }
+            opacity: 0
+        },
+        {
+            opacity: 0.8
+        }
         ], {
             duration: 300,
             fill: "forwards"
         });
     });
-    document.addEventListener("mousemove", function(e) {
+    document.addEventListener("mousemove", function (e) {
         var _a = getXY(e, cursor),
             cursorX = _a[0],
             cursorY = _a[1];
@@ -147,7 +144,7 @@
             delay: 150
         });
     });
-    document.addEventListener("mouseleave", function(e) {
+    document.addEventListener("mouseleave", function (e) {
         cursor.animate([{
             opacity: 0.8
         }, {
@@ -157,11 +154,11 @@
             fill: "forwards"
         });
         cursorBorder.animate([{
-                opacity: 0.8
-            },
-            {
-                opacity: 0
-            }
+            opacity: 0.8
+        },
+        {
+            opacity: 0
+        }
         ], {
             duration: 500,
             fill: "forwards"

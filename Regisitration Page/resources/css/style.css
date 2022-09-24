@@ -14,7 +14,9 @@
 }
 
 body {
-    background: var(--bgColor);
+    background-image: url('../images/blue-high-tech-futuristic-cyberspace-technology-background-free-vector.jpg');
+    background-size: cover;
+
     height: 200rem;
 }
 
@@ -115,6 +117,22 @@ h1 {
     font-family: monospace;
     color: rgba(96, 218, 242, 255);
     font-size: 3rem;
+    animation-name: title;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    position: relative;
+    top: 3rem;
+    opacity: 0;
+}
+@keyframes title {
+    from {
+        top: 2rem;
+        opacity: 0;
+    }
+    to{
+        top: 0rem;
+        opacity: 1;
+    }
 }
 
 h3 {
@@ -338,12 +356,24 @@ input:focus {
 
 #myVideo {
     position: fixed;
-    left: 2rem;
-    top: -5rem;
+    left: 5rem;
+    top: 20rem;
     width: 52rem;
     height: 52rem;
     border-radius: 50px;
     border: 5px solid black;
+    animation-name: vid;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@keyframes vid {
+    from {
+        top: 20rem;
+    }
+    to {
+        top: -5rem;
+    }
 }
 
 

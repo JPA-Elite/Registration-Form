@@ -10,50 +10,71 @@
     <title>Welcome</title>
 </head>
 
-<body id="welcome">
+<body id="welcome" onload="">
+<audio id="myAudio">
+        <source src="../resources/sound/theme.mp3" type="audio/mpeg">
+    </audio>
     <video autoplay muted loop id="myVideo">
         <source src="../resources/video/halo.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
     </video>
     <div class="cursor"></div>
     <div class="cursor-border"></div>
-   
+  
     <div class="intro_main">
         <div class="v2"></div>
         <div>
             <h1 class="title">Hello! Welcome!</h1>
             <?php
 
-            $fname = $_POST["fname"];
-            $sname = $_POST["sname"];
-            $email = $_POST["email"];
-            $address = $_POST["address"];
-            $password = $_POST["password"];
-
-
-            if (isset($_POST["submit"])) {
-                echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
-                echo "<h3>Your_Address:  $address</h3>";
-                echo "<h3>Your_Email-Address: $email</h3>";
-                echo "<h3>Your_password is $password</h3>";
 
 
 
+if (isset($_POST["submit"])) {
+    $fname    = $_POST["fname"];
+    $sname    = $_POST["sname"];
+    $email    = $_POST["email"];
+    $address  = $_POST["address"];
+    $password = $_POST["password"];
+    
+    echo "<h3 id='typedtext1'>Your_Name: $fname $sname</h3>";
+    echo "<h3 id='typedtext2'>Your_Address:  $address</h3>";
+    echo "<h3 id='typedtext3'>Your_Email-Address: $email</h3>";
+    echo "<h3 id='typedtext4'>Your_password is $password</h3>";
+    echo "<script>
+
+            function typeEffect(element, speed) {
+                var text = element.innerHTML;
+                element.innerHTML = '';
                 
-
-// echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
-//                 echo "<h3>Your_Address:  $address</h3>";
-//                 echo "<h3>Your_Email-Address: $email</h3>";
-//                 echo "<h3>Your_password is $password</h3>";
-
-
-
-
-// set up text to print, each item in array is new line
-               echo "<script></script>";
-
+                var i = 0;
+                var timer = setInterval(function() {
+                if (i < text.length) {
+                  element.append(text.charAt(i));
+                  i++;
+                } else {
+                  clearInterval(timer);
+                }
+              }, speed);
             }
-            ?>
+            
+            
+            // application
+            var speed = 100;
+            var txt1 = document.getElementById('typedtext1');  
+            var txt2 = document.getElementById('typedtext2');  
+            var txt3 = document.getElementById('typedtext3');  
+            var txt4 = document.getElementById('typedtext4');  
+            // type affect to header
+            typeEffect(txt1, speed);
+            typeEffect(txt2, speed);
+            typeEffect(txt3, speed);
+            typeEffect(txt4, speed);
+
+               </script>";
+    
+    
+}
+?>
 
         </div>
 
