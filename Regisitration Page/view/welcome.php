@@ -15,11 +15,9 @@
         <source src="../resources/video/halo.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-    <div id="clock">
-        <p class="date">{{ date }}</p>
-        <p class="time">{{ time }}</p>
-
-    </div>
+    <div class="cursor"></div>
+    <div class="cursor-border"></div>
+   
     <div class="intro_main">
         <div class="v2"></div>
         <div>
@@ -45,36 +43,96 @@
         </div>
 
     </div>
+    <div class="back b1"></div>
+    <div class="back b2"></div>
+    <div class="back b3"></div>
+    <script src="https://api.map.baidu.com/api?v=3.0&amp;ak=fQhFT2lC66DszI30AOkLCKu0720e3Mca"></script>
     <script src="../resources/js/function.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+
     <script>
-        var clock = new Vue({
-            el: '#clock',
-            data: {
-                time: '',
-                date: ''
-            }
-        });
-
-        var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-        var timerID = setInterval(updateTime, 1000);
-        updateTime();
-
-        function updateTime() {
-            var cd = new Date();
-            clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
-            clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+        var cursor = document.querySelector(".cursor");
+        var cursorBorder = document.querySelector(".cursor-border");
+        var getXY = function(event, element) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var rect = element.getBoundingClientRect();
+            x -= rect.width / 2;
+            y -= rect.height / 2;
+            return [x, y];
         };
-
-        function zeroPadding(num, digit) {
-            var zero = '';
-            for (var i = 0; i < digit; i++) {
-                zero += '0';
+        document.addEventListener("mouseenter", function(e) {
+            cursor.animate([{
+                opacity: 0
+            }, {
+                opacity: 1
+            }], {
+                duration: 300,
+                fill: "forwards"
+            });
+            cursorBorder.animate([{
+                    opacity: 0
+                },
+                {
+                    opacity: 0.8
+                }
+            ], {
+                duration: 300,
+                fill: "forwards"
+            });
+        });
+        document.addEventListener("mousemove", function(e) {
+            var _a = getXY(e, cursor),
+                cursorX = _a[0],
+                cursorY = _a[1];
+            var _b = getXY(e, cursorBorder),
+                cursorBorderX = _b[0],
+                cursorBorderY = _b[1];
+            var targetName = e.target.tagName;
+            if (targetName === "A" || targetName === "LABEL" || targetName === "BUTTON") {
+                cursorBorder.classList.add("on-focus");
+            } else {
+                cursorBorder.classList.remove("on-focus");
             }
-            return (zero + num).slice(-digit);
-        }
+            cursor.animate([{
+                transform: "translate(".concat(cursorX, "px, ").concat(cursorY, "px)")
+            }, {
+                transform: "translate(".concat(cursorX, "px, ").concat(cursorY, "px)")
+            }], {
+                duration: 300,
+                fill: "forwards",
+                delay: 50
+            });
+            cursorBorder.animate([{
+                transform: "translate(".concat(cursorBorderX, "px, ").concat(cursorBorderY, "px)")
+            }, {
+                transform: "translate(".concat(cursorBorderX, "px, ").concat(cursorBorderY, "px)")
+            }], {
+                duration: cursorBorder.classList.contains("on-focus") ? 1500 : 300,
+                fill: "forwards",
+                delay: 150
+            });
+        });
+        document.addEventListener("mouseleave", function(e) {
+            cursor.animate([{
+                opacity: 0.8
+            }, {
+                opacity: 0
+            }], {
+                duration: 500,
+                fill: "forwards"
+            });
+            cursorBorder.animate([{
+                    opacity: 0.8
+                },
+                {
+                    opacity: 0
+                }
+            ], {
+                duration: 500,
+                fill: "forwards"
+            });
+        });
     </script>
-
 </body>
 
 </html>
