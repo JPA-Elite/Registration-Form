@@ -46,6 +46,7 @@ body.show-password {
 .b2 {
     background-image: url('../images/back2.jpg');
 }
+
 .b3 {
     background-image: url('../images/back3.jpg');
 }
@@ -409,4 +410,10 @@ Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr */
     padding: 0.5rem;
     background: rgba(51, 152, 219, 0.5);
     border-color: transparent;
+}
+
+#typedtext {
+    font-family: 'Gochi Hand', cursive;
+    font-family: 'Kameron', serif;
+    color: #33ff66;
 }

@@ -32,12 +32,27 @@
 
 
             if (isset($_POST["submit"])) {
-                echo "<h3>Your_Name: $fname  $sname</h3>";
+                echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
                 echo "<h3>Your_Address:  $address</h3>";
                 echo "<h3>Your_Email-Address: $email</h3>";
                 echo "<h3>Your_password is $password</h3>";
-            }
 
+
+
+                
+
+// echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
+//                 echo "<h3>Your_Address:  $address</h3>";
+//                 echo "<h3>Your_Email-Address: $email</h3>";
+//                 echo "<h3>Your_password is $password</h3>";
+
+
+
+
+// set up text to print, each item in array is new line
+               echo "<script></script>";
+
+            }
             ?>
 
         </div>
