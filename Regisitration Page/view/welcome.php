@@ -21,8 +21,10 @@
     <div class="cursor-border"></div>
   
     <div class="intro_main">
+        <button id="button"><img src="../resources/images/music.png" alt=""></button>
         <div class="v2"></div>
         <div>
+            
             <h1 class="title">Hello! Welcome!</h1>
             <?php
 

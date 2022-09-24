@@ -114,8 +114,15 @@ submit.addEventListener("click", (e) => {
 
 function Theme() {
   bg_music.volume = 0.8;
-  bg_music.play();
 }
+
+// let switch_count = 0;
+var btn = document.getElementById("button_music");
+btn.addEventListener("click", function() {
+    Theme();
+    bg_music.play();
+ 
+});
 
 function Beep() {
   beep.volume = 0.8;
@@ -128,6 +135,3 @@ function Login() {
 }
 
 Theme();
-
-
-
