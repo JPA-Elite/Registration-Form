@@ -17,41 +17,24 @@
     </video>
     <div class="cursor"></div>
     <div class="cursor-border"></div>
-   
+
     <div class="intro_main">
         <div class="v2"></div>
         <div>
             <h1 class="title">Hello! Welcome!</h1>
             <?php
-
-            $fname = $_POST["fname"];
-            $sname = $_POST["sname"];
-            $email = $_POST["email"];
-            $address = $_POST["address"];
-            $password = $_POST["password"];
-
-
             if (isset($_POST["submit"])) {
+
+                $fname = $_POST["fname"];
+                $sname = $_POST["sname"];
+                $email = $_POST["email"];
+                $address = $_POST["address"];
+                $password = $_POST["password"];
                 echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
                 echo "<h3>Your_Address:  $address</h3>";
                 echo "<h3>Your_Email-Address: $email</h3>";
                 echo "<h3>Your_password is $password</h3>";
-
-
-
-                
-
-// echo "<h3 id='typedtext'>Your_Name: $fname  $sname</h3>";
-//                 echo "<h3>Your_Address:  $address</h3>";
-//                 echo "<h3>Your_Email-Address: $email</h3>";
-//                 echo "<h3>Your_password is $password</h3>";
-
-
-
-
-// set up text to print, each item in array is new line
-               echo "<script></script>";
-
+                echo "<script></script>";
             }
             ?>
 
