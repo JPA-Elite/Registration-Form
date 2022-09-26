@@ -65,6 +65,11 @@ submit.addEventListener("click", (e) => {
       "Too large exceeds 25 characters!";
     e.preventDefault();
   }
+  if (fname.value != "" && fname.value.length < 2) {
+    fname.parentElement.children[1].style.display = "block";
+    fname.parentElement.children[1].innerHTML = "Have at least 2 characters!";
+    e.preventDefault();
+  }
   if (sname.value == "" && sname.value.length <= 25) {
     sname.parentElement.children[1].style.display = "block";
     sname.parentElement.children[1].innerHTML = "Input this field!";
@@ -74,6 +79,11 @@ submit.addEventListener("click", (e) => {
     sname.parentElement.children[1].style.display = "block";
     sname.parentElement.children[1].innerHTML =
       "Too large exceeds 25 characters!";
+    e.preventDefault();
+  }
+  if (sname.value != "" && sname.value.length < 2) {
+    sname.parentElement.children[1].style.display = "block";
+    sname.parentElement.children[1].innerHTML = "Have at least 2 characters!";
     e.preventDefault();
   }
 
@@ -121,4 +131,3 @@ function Login() {
   login.volume = 0.1;
   login.play();
 }
-
