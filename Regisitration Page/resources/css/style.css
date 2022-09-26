@@ -39,6 +39,7 @@ body.show-password {
     background-size: cover;
     background-attachment: fixed;
     z-index: -10;
+    transition: 1s all;
 }
 
 .b1 {
@@ -87,11 +88,11 @@ body.show-password {
     border-radius: 10px;
     transform: translate3d(0, 0, 0);
     animation-name: glitch;
-    animation-fill-mode:forwards;
-    animation-direction:alternate-reverse;
-    animation-iteration-count:infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
     animation-duration: 5s;
-    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     animation-delay: 3s;
     opacity: 1;
 }
@@ -100,73 +101,96 @@ body.show-password {
     20% {
         opacity: 1;
     }
-    50%{
+
+    50% {
         opacity: 0;
     }
-    60%{
+
+    60% {
         opacity: 1;
     }
-    70%{
+
+    70% {
         opacity: 0;
     }
-    72%{
+
+    72% {
         opacity: 1;
     }
-    74%{
+
+    74% {
         opacity: 0;
     }
-    76%{
+
+    76% {
         opacity: 1;
     }
-    76%{
+
+    76% {
         opacity: 0;
     }
-    80%{
+
+    80% {
         opacity: 1;
     }
-    82%{
+
+    82% {
         opacity: 0;
     }
-    84%{
+
+    84% {
         opacity: 1;
     }
-    86%{
+
+    86% {
         opacity: 0;
     }
-    88%{
+
+    88% {
         opacity: 1;
     }
-    90%{
+
+    90% {
         opacity: 0;
     }
-    91%{
+
+    91% {
         opacity: 1;
     }
-    92%{
+
+    92% {
         opacity: 0;
     }
-    93%{
+
+    93% {
         opacity: 1;
     }
-    94%{
+
+    94% {
         opacity: 0;
     }
-    95%{
+
+    95% {
         opacity: 1;
     }
-    96%{
+
+    96% {
         opacity: 0;
     }
-    97%{
+
+    97% {
         opacity: 1;
     }
-    98%{
+
+    98% {
         opacity: 0;
     }
-    99%{
+
+    99% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
     }
 }
@@ -410,7 +434,7 @@ input:focus {
     background-image: url('../images/blue-high-tech-futuristic-cyberspace-technology-background-free-vector.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 1;
+    opacity: 0.8;
     position: fixed;
     text-align: center;
     display: flex;
@@ -419,6 +443,22 @@ input:focus {
     border-top-left-radius: 70px;
     border-bottom-left-radius: 70px;
     border: 5px solid black;
+}
+.intro_main::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://9elements.com/blog/assets/images/glitch-overlay.svg');
+    background-size: cover;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .v2 {
@@ -469,6 +509,7 @@ input:focus {
     animation-duration: 1s;
 }
 
+
 @keyframes vid {
     from {
         top: 20rem;
@@ -477,39 +518,6 @@ input:focus {
     to {
         top: -5rem;
     }
-}
-
-
-
-
-#clock {
-    position: fixed;
-    font-family: 'Share Tech Mono', monospace;
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    left: 32%;
-    top: 2rem;
-    transform: translate(-50%, -50%);
-    color: #daf6ff;
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
-}
-
-#clock .time {
-    letter-spacing: 0.01em;
-    font-size: 20px;
-    /* padding: 5px 0; */
-}
-
-#clock .date {
-    letter-spacing: 0.1em;
-    font-size: 24px;
-}
-
-#clock .text {
-    letter-spacing: 0.1em;
-    font-size: 12px;
-    padding: 20px 0 0;
 }
 
 /* 

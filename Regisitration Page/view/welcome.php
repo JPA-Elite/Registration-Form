@@ -14,7 +14,7 @@
     <audio id="myAudio">
         <source src="../resources/sound/theme.mp3" type="audio/mpeg">
     </audio>
-    <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop playsinline id="myVideo">
         <source src="../resources/video/halo.mp4" type="video/mp4">
     </video>
     <div class="cursor"></div>
