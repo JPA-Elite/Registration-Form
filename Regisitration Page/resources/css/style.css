@@ -9,12 +9,14 @@
     --bgColor: rgba(1, 34, 67, 100);
     --inputColor: white;
     --outlineColor: dodgerblue;
-    --beamColor: rgba(255, 123, 0, 0.863);
+    --beamColor: #60daf2;
     --spacer: 0.5rem;
 }
 
 body {
-    background: var(--bgColor);
+    background-image: url('../images/blue-high-tech-futuristic-cyberspace-technology-background-free-vector.jpg');
+    background-size: cover;
+
     height: 200rem;
 }
 
@@ -83,6 +85,22 @@ body.show-password {
     width: 95%;
     background-color: black;
     border-radius: 10px;
+    transform: translate3d(0, 0, 0);
+    animation-name: glitch;
+    animation-fill-mode:forwards;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-duration: 0.1s;
+    opacity: 1;
+}
+
+@keyframes glitch {
+    20% {
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
 
 .main .registration {
@@ -115,6 +133,24 @@ h1 {
     font-family: monospace;
     color: rgba(96, 218, 242, 255);
     font-size: 3rem;
+    animation-name: title;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    position: relative;
+    top: 3rem;
+    opacity: 0;
+}
+
+@keyframes title {
+    from {
+        top: 2rem;
+        opacity: 0;
+    }
+
+    to {
+        top: 0rem;
+        opacity: 1;
+    }
 }
 
 h3 {
@@ -336,14 +372,43 @@ input:focus {
 }
 
 
+#btn_m {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn_m img {
+    width: 30px;
+    height: 30px;
+
+}
+
+
+
 #myVideo {
     position: fixed;
-    left: 2rem;
-    top: -5rem;
+    left: 0rem;
+    top: 20rem;
     width: 52rem;
     height: 52rem;
     border-radius: 50px;
     border: 5px solid black;
+    animation-name: vid;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@keyframes vid {
+    from {
+        top: 20rem;
+    }
+
+    to {
+        top: -5rem;
+    }
 }
 
 
@@ -416,4 +481,65 @@ Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr */
     font-family: 'Gochi Hand', cursive;
     font-family: 'Kameron', serif;
     color: #33ff66;
+}
+
+@media only screen and (min-width: 1366px) {
+    #myVideo {
+        left: 1.5rem !important;
+    }
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    #myVideo {
+        width: 42rem !important;
+        left: 1rem !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #myVideo {
+        width: 39rem !important;
+        /* left: 1rem !important; */
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #myVideo {
+        width: 35rem !important;
+        left: 0.5rem !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #myVideo {
+        width: 28rem !important;
+        left: 0.1rem !important;
+    }
+
+    .intro_main .title {
+        font-size: 2rem !important;
+    }
+
+    .intro_main h3 {
+        font-size: 1rem !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 400px) {
+    #myVideo {
+        width: 15rem !important;
+        left: 0.1rem !important;
+    }
+
+    .intro_main .title {
+        font-size: 1rem !important;
+    }
+
+    .intro_main h3 {
+        font-size: 0.5rem !important;
+    }
 }
