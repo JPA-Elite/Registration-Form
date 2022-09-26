@@ -42,11 +42,11 @@ body.show-password {
     transition: 1s all;
 }
 
-.b1 {
+.b2 {
     background-image: url('../images/back1.webp');
 }
 
-.b2 {
+.b1 {
     background-image: url('../images/back2.jpg');
 }
 
