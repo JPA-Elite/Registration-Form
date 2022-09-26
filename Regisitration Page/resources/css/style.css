@@ -354,13 +354,13 @@ input:focus {
 }
 
 
-#button {
+#btn_m {
     position: absolute;
     right: 0;
     top: 0;
     border-radius: 5px;
 }
-#button img {
+#btn_m img {
     width: 30px;
     height: 30px;
     
@@ -370,7 +370,7 @@ input:focus {
 
 #myVideo {
     position: fixed;
-    left: 5rem;
+    left: 0rem;
     top: 20rem;
     width: 52rem;
     height: 52rem;
@@ -460,4 +460,16 @@ Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr */
     font-family: 'Gochi Hand', cursive;
     font-family: 'Kameron', serif;
     color: #33ff66;
+}
+
+@media only screen and (min-width: 1366px){
+    #myVideo {
+        left: 1.5rem !important;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #myVideo {
+        left: 1.5rem !important;
+    }
 }

@@ -21,7 +21,7 @@
     <div class="cursor-border"></div>
   
     <div class="intro_main">
-        <button id="button"><img src="../resources/images/music.png" alt=""></button>
+        <button id="btn_m"><img src="../resources/images/music.png" alt=""></button>
         <div class="v2"></div>
         <div>
             
@@ -88,6 +88,19 @@ if (isset($_POST["submit"])) {
     <script src="../resources/js/function.js"></script>
 
     <script>
+        
+function Theme() {
+  bg_music.volume = 0.5;
+  bg_music.play();
+}
+
+// let switch_count = 0;
+var btn_m = document.getElementById("btn_m");
+btn_m.addEventListener("click", function() {
+    Theme();
+});
+
+
         var cursor = document.querySelector(".cursor");
         var cursorBorder = document.querySelector(".cursor-border");
         var getXY = function(event, element) {
