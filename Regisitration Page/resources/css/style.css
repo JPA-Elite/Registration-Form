@@ -42,11 +42,11 @@ body.show-password {
     transition: 1s all;
 }
 
-.b2 {
+.b1 {
     background-image: url('../images/back1.webp');
 }
 
-.b1 {
+.b2 {
     background-image: url('../images/back2.jpg');
 }
 
@@ -558,12 +558,8 @@ Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr */
     font-family: 'Kameron', serif;
     color: #33ff66;
 }
-@media only screen and (min-width:1400px) {
-    #myVideo {
-        left: 5rem !important;
-    }
-}
-@media only screen and (max-width: 1366px) {
+
+@media only screen and (min-width: 1366px) {
     #myVideo {
         left: 1.5rem !important;
     }
@@ -581,6 +577,7 @@ Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr */
 @media only screen and (max-width: 1000px) {
     #myVideo {
         width: 39rem !important;
+        /* left: 1rem !important; */
     }
 }
 
