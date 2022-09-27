@@ -28,10 +28,10 @@
             <h1 class="title">Hello! Welcome!</h1>
             <?php
             if (isset($_POST["submit"])) {
-                $fname    = $_POST["fname"];
-                $sname    = $_POST["sname"];
-                $email    = $_POST["email"];
-                $address  = $_POST["address"];
+                $fname    = htmlspecialchars($_POST["fname"]);
+                $sname    = htmlspecialchars($_POST["sname"]);
+                $email    = htmlspecialchars($_POST["email"]);
+                $address  = htmlspecialchars($_POST["address"]);
                 $password = $_POST["password"];
 
                 echo "<h3 id='typedtext1'>Your_Name: $fname $sname</h3>";
