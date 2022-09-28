@@ -27,6 +27,10 @@
 
             <h1 class="title">Hello! Welcome!</h1>
             <?php
+            // if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+            // }
+            echo '<script>alert($_SERVER["REQUEST_METHOD"])</script>';
             if (isset($_POST["submit"])) {
                 $fname    = htmlspecialchars($_POST["fname"]);
                 $sname    = htmlspecialchars($_POST["sname"]);

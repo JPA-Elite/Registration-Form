@@ -48,62 +48,59 @@ input.forEach((e) => {
 email.addEventListener("keyup", (e) => {
   if (!email.value.match(mailformat)) {
     email.style.borderColor = "red";
-  } else {
+  }
+  {
     email.style.borderColor = "green";
   }
 });
 submit.addEventListener("click", (e) => {
   Login();
-  if (fname.value == "" && fname.value.length <= 25) {
+  if (fname.value != "" && fname.value.length < 2) {
+    fname.parentElement.children[1].style.display = "block";
+    fname.parentElement.children[1].innerHTML = "Have at least 2 characters!";
+    e.preventDefault();
+  } else if (fname.value == "") {
     fname.parentElement.children[1].style.display = "block";
     fname.parentElement.children[1].innerHTML = "Input this field!";
     e.preventDefault();
-  }
-  if (fname.value != "" && fname.value.length > 25) {
+  } else if (fname.value != "" && fname.value.length > 25) {
     fname.parentElement.children[1].style.display = "block";
     fname.parentElement.children[1].innerHTML =
       "Too large exceeds 25 characters!";
     e.preventDefault();
-  }
-  if (sname.value == "" && sname.value.length <= 25) {
+  } else if (sname.value != "" && sname.value.length < 2) {
+    sname.parentElement.children[1].style.display = "block";
+    sname.parentElement.children[1].innerHTML = "Have at least 2 characters!";
+    e.preventDefault();
+  } else if (sname.value == "" && sname.value.length <= 25) {
     sname.parentElement.children[1].style.display = "block";
     sname.parentElement.children[1].innerHTML = "Input this field!";
     e.preventDefault();
-  }
-  if (sname.value != "" && sname.value.length > 25) {
+  } else if (sname.value != "" && sname.value.length > 25) {
     sname.parentElement.children[1].style.display = "block";
     sname.parentElement.children[1].innerHTML =
       "Too large exceeds 25 characters!";
     e.preventDefault();
-  }
-
-  if (email.value == "") {
+  } else if (email.value == "") {
     email.parentElement.children[1].style.display = "block";
     email.parentElement.children[1].innerHTML = "Input this field!";
     e.preventDefault();
-  }
-  if (!email.value.match(mailformat) && email.value != "") {
+  } else if (!email.value.match(mailformat) && email.value != "") {
     email.parentElement.children[1].style.display = "block";
     email.parentElement.children[1].innerHTML = "Invalid Email";
     e.preventDefault();
-  }
-  if (address.value == "") {
+  } else if (address.value == "") {
     address.parentElement.children[1].style.display = "block";
     e.preventDefault();
-  }
-
-  if (password.value == "") {
+  } else if (password.value == "") {
     password.parentElement.children[1].style.display = "block";
     password.parentElement.children[1].innerHTML = "Input this field!";
     e.preventDefault();
-  }
-
-  if (cpassword.value == "") {
+  } else if (cpassword.value == "") {
     cpassword.parentElement.children[1].style.display = "block";
     cpassword.parentElement.children[1].innerHTML = "Input this field!";
     e.preventDefault();
-  }
-  if (password.value != cpassword.value) {
+  } else if (password.value != cpassword.value) {
     password.parentElement.children[1].style.display = "block";
     cpassword.parentElement.children[1].style.display = "block";
     password.parentElement.children[1].innerHTML = "Password not match!";
@@ -121,4 +118,3 @@ function Login() {
   login.volume = 0.1;
   login.play();
 }
-
