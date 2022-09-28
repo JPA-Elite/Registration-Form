@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../resources/images/favicon.png">
     <link rel="stylesheet" href="../resources/css/style.css">
+    
 
     <title>Registration Form</title>
 </head>

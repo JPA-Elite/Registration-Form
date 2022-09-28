@@ -27,53 +27,61 @@
 
             <h1 class="title">Hello! Welcome!</h1>
             <?php
-            // if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            $fname = $sname  = $email  = $address = $password  = null;
+            // PHP VALIDATION
+            function validate_data($data)
+            {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST["submit"])) {
+                    $fname    = validate_data($_POST["fname"]);
+                    $sname    = validate_data($_POST["sname"]);
+                    $email    = validate_data($_POST["email"]);
+                    $address  = validate_data($_POST["address"]);
+                    $password = $_POST["password"];
 
-            // }
-            echo '<script>alert($_SERVER["REQUEST_METHOD"])</script>';
-            if (isset($_POST["submit"])) {
-                $fname    = htmlspecialchars($_POST["fname"]);
-                $sname    = htmlspecialchars($_POST["sname"]);
-                $email    = htmlspecialchars($_POST["email"]);
-                $address  = htmlspecialchars($_POST["address"]);
-                $password = $_POST["password"];
-
-                echo "<h3 id='typedtext1'>Your_Name: $fname $sname</h3>";
-                echo "<h3 id='typedtext2'>Your_Address:  $address</h3>";
-                echo "<h3 id='typedtext3'>Your_Email-Address: $email</h3>";
-                echo "<h3 id='typedtext4'>Your_password is $password</h3>";
-                echo "<script>
-
-            function typeEffect(element, speed) {
-                var text = element.innerHTML;
-                element.innerHTML = '';
-                
-                var i = 0;
-                var timer = setInterval(function() {
-                if (i < text.length) {
-                  element.append(text.charAt(i));
-                  i++;
-                } else {
-                  clearInterval(timer);
+                    echo "<h3 id='typedtext1'>Your_Name: $fname $sname</h3>";
+                    echo "<h3 id='typedtext2'>Your_Address:  $address</h3>";
+                    echo "<h3 id='typedtext3'>Your_Email-Address: $email</h3>";
+                    echo "<h3 id='typedtext4'>Your_password is $password</h3>";
+                    echo "<script>
+    
+                function typeEffect(element, speed) {
+                    var text = element.innerHTML;
+                    element.innerHTML = '';
+                    
+                    var i = 0;
+                    var timer = setInterval(function() {
+                    if (i < text.length) {
+                      element.append(text.charAt(i));
+                      i++;
+                    } else {
+                      clearInterval(timer);
+                    }
+                  }, speed);
                 }
-              }, speed);
+                
+                
+                // application
+                var speed = 100;
+                var txt1 = document.getElementById('typedtext1');  
+                var txt2 = document.getElementById('typedtext2');  
+                var txt3 = document.getElementById('typedtext3');  
+                var txt4 = document.getElementById('typedtext4');  
+                // type affect to header
+                typeEffect(txt1, speed);
+                typeEffect(txt2, speed);
+                typeEffect(txt3, speed);
+                typeEffect(txt4, speed);
+    
+                   </script>";
+                }
             }
-            
-            
-            // application
-            var speed = 100;
-            var txt1 = document.getElementById('typedtext1');  
-            var txt2 = document.getElementById('typedtext2');  
-            var txt3 = document.getElementById('typedtext3');  
-            var txt4 = document.getElementById('typedtext4');  
-            // type affect to header
-            typeEffect(txt1, speed);
-            typeEffect(txt2, speed);
-            typeEffect(txt3, speed);
-            typeEffect(txt4, speed);
 
-               </script>";
-            }
             ?>
 
         </div>
